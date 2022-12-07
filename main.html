@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>My Schedule</title>
+  <link href="https://CodeDay2022.rayscript.repl.co/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <h1>Codes made by 7th graders Rian Chadha and Anakin Dasgupta.</h1>
+  <h2>Every project here is made by us or our alt accounts.</h2>
+  <div class="library">
+    <div class="app" data-redir="https://flashcards.rayscript.repl.co">
+      Flashcard Maker
+    </div>
+    <div class="app" data-redir="https://todo-app.shadowcodesjs.repl.co/">
+      Student Agenda
+    </div>
+    <div class="app" data-redir="https://CodeDay2022.rayscript.repl.co/timer.html">
+      Timer
+    </div>
+    <div class="app" data-redir="https://mathorg.rascript.repl.co/practice.html">Math.org Practice</div>
+    <div class="app" data-redir="https://CodeDay2022.rayscript.repl.co/sciencepractice.html">Science Quiz</div>
+    <div class="app" data-redir="https://codeday2022.rayscript.repl.co/elapractice.html">ELA Quiz</div>
+<div class="app" data-redir="https://CodeDay2022.rayscript.repl.co/schedule.html">Make Schedule</div>
+  </div>
+  <script>
+    let apps = document.querySelectorAll('.app');
+    apps.forEach(app => {
+      app.onclick = function(e) {
+        location.href = e.target.getAttribute('data-redir');
+      }
+    })
+  </script>
+</body>
+
+</html>
