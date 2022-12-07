@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Timer</title>
+</head>
+<body>
+  <div class="timer">
+    <h4 style="float: left;" id="minsDisp"></h4>
+    <h4 style="float: left;">:</h4>
+    <h4 style="float: left;" id="secsDisp"></h4>
+  </div><br><br><br>
+  <input type="number" id="mins" placeholder="Number of minutes">
+  <input type="number" id="secs" placeholder="Number of seconds">
+  <button id="start">Start Timer</button>
+  <script>
+    let btn = document.querySelector('#start');
+    btn.onclick = function() {
+      let mins = parseInt(document.querySelector('#mins').value);
+      let secs = parseInt(document.querySelector('#secs').value);
+      let minsDisp = document.querySelector('#minsDisp');
+      let secsDisp = document.querySelector('#secsDisp');
+      let timer = setInterval(function() {
+        secs -= 1;
+        if (secs < 0 && mins > 0) {
+          mins -= 1;
+          secs = 59;
+        }
+        if (secs < 0 && mins == 0) {
+          clearInterval(timer);
+        }
+        minsDisp.innerText = mins;
+        secsDisp.innerText = secs;
+      }, 1000)
+    }
+  </script>
+</body>
+</html>
